@@ -1,151 +1,131 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Amusa Adire</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Outfit:wght@400;500;600&display=swap">
-<style>
-*,*::before,*::after{box-sizing:border-box}
-html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-body{margin:0} img{max-width:100%;display:block} a{color:inherit}
-:focus-visible{outline:2px solid currentColor;outline-offset:3px}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-.demo-bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:8px 16px;font:500 12px/1.4 system-ui,sans-serif;background:#111;color:#eee;letter-spacing:.02em}.demo-bar a{color:#fff;text-decoration:none}
-/* Adire: indigo and marigold taken from the adire print trousers; bold split hero, patterned band, chunky cards. */
-:root{--indigo:#1D2545;--indigo2:#2C3766;--marigold:#E9A23B;--rust:#B9532C;--sand:#F3EBDD;--ink:#1B1B24;--mute:#5E5A55;
---display:"Fraunces",Georgia,serif;--body:"Outfit",system-ui,sans-serif;color-scheme:light}
-body{background:var(--sand);color:var(--ink);font:400 16px/1.6 var(--body)}
-.wrap{max-width:1200px;margin:0 auto;padding-inline:24px}
-header{background:var(--indigo);color:var(--sand)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;flex-wrap:wrap}
-.logo{font:700 22px/1 var(--display)}.logo span{color:var(--marigold)}
-.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-weight:500;flex-wrap:wrap}.nav a{text-decoration:none}.nav a:hover{color:var(--marigold)}
-.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding-block:48px 64px}
-.tag{display:inline-block;background:var(--marigold);color:var(--indigo);font-weight:600;font-size:13px;padding:6px 12px;border-radius:4px;margin-bottom:18px}
-.hero h1{font:700 clamp(40px,6vw,76px)/1 var(--display);margin:0 0 18px;letter-spacing:-.02em;text-wrap:balance}
-.hero h1 em{font-style:italic;color:var(--marigold);font-weight:500}
-.hero p{max-width:44ch;color:#D7D3E4;margin:0 0 26px;font-size:17px}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:15px 26px;border-radius:8px;font-weight:600;text-decoration:none}
-.btn.y{background:var(--marigold);color:var(--indigo)}.btn.y:hover{background:#F2B455}.btn.o{border:2px solid var(--sand);color:var(--sand)}
-.hero-pic{position:relative}
-.hero-pic img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 55%;border-radius:16px;border:6px solid var(--marigold)}
-.chip{position:absolute;left:-14px;bottom:28px;background:var(--sand);color:var(--ink);padding:12px 16px;border-radius:10px;font-size:14px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
-.chip strong{display:block;font:700 18px/1.2 var(--display)}
-.pattern{background:var(--marigold);color:var(--indigo);text-align:center;font-weight:600;padding:12px 16px;letter-spacing:.06em}
-section{padding-block:72px}
-.sh{margin-bottom:32px}.sh h2{font:700 clamp(30px,4vw,48px)/1.05 var(--display);margin:0}.sh p{color:var(--mute);margin:8px 0 0;max-width:52ch}
-.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.svc div{background:#fff;border-radius:14px;padding:26px;border:2px solid var(--indigo)}
-.svc h3{font:700 22px/1.2 var(--display);margin:0 0 6px}.svc p{margin:0;color:var(--mute)}
-.svc div:nth-child(2){background:var(--indigo);color:var(--sand)}.svc div:nth-child(2) p{color:#D7D3E4}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}@media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr);gap:14px}}
-.card{background:#fff;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;border:1px solid #E4DACA}
-.ph{background:#E9DFCF;overflow:hidden}
-.ph img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 60%;transition:transform .5s}
+<html lang="en">
 
-.info{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
-.cat{margin:0;align-self:flex-start;font-size:12px;font-weight:600;color:var(--rust);background:#F8E7DC;padding:3px 8px;border-radius:4px}
-.info h3{font:600 19px/1.25 var(--display);margin:0;flex:1}
-.meta{display:flex;justify-content:space-between;align-items:baseline;margin:4px 0 10px;color:var(--mute);font-size:14px}
-.meta strong{font:700 20px/1 var(--display);color:var(--indigo);font-variant-numeric:tabular-nums}
-.btn-sm{display:block;text-align:center;background:var(--indigo);color:#fff;padding:12px;border-radius:8px;font-weight:600;text-decoration:none;font-size:14px}.btn-sm:hover{background:var(--rust)}
-.note{font-size:13px;color:var(--mute);margin-top:24px}
-.cta{background:var(--rust);color:#fff;border-radius:20px;padding:44px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-.cta h2{font:700 clamp(26px,3.4vw,40px)/1.1 var(--display);margin:0 0 6px}.cta p{margin:0;opacity:.9}
-footer{background:var(--indigo);color:#D7D3E4;padding-block:48px 28px}
-.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}footer h4{color:var(--marigold);margin:0 0 10px;font-size:15px}footer p{margin:0 0 6px}
-.copy{margin-top:32px;font-size:13px;opacity:.7}
-@media (max-width:860px){.hero,.svc,.foot{grid-template-columns:1fr}.chip{left:12px}section{padding-block:52px}.cta{padding:28px}}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Amusa Adire</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Outfit:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="adire.css">
+    <script src="adire.js"></script>
+</head>
 
-</style></head><body>
-<div class="demo-bar"><a href="index.html">&larr; All designs</a><span>Design 3 · Adire</span></div>
-<header><div class="wrap">
- <nav class="nav"><div class="logo">Amusa <span>Signature</span> Suite</div><ul><li><a href="#shop">Shop</a></li><li><a href="#services">Services</a></li><li><a href="#contact">Contact</a></li></ul></nav>
- <div class="hero"><div>
-  <span class="tag">Senators · Tailoring · Fabrics</span>
-  <h1>Wear your culture <em>with confidence.</em></h1>
-  <p>Bold, well-cut native wear for every occasion. Shop ready-made senator sets, order custom tailoring, or pick up fabric for your next outfit.</p>
-  <div class="btns"><a class="btn y" href="#shop">Shop the collection</a><a class="btn o" href="https://wa.me/13462040896" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
- </div><div class="hero-pic"><img src="img/p11.jpg" alt="Wine stone-detail set with cap"></div></div>
-</div></header>
-<div class="pattern">Ready-to-wear · Custom tailoring · Fabrics</div>
-<section id="services"><div class="wrap">
- <div class="sh"><h2>What we offer</h2></div>
- <div class="svc">
-  <div><h3>Ready-to-wear</h3><p>Senator sets with matching trousers, ready to ship.</p></div>
-  <div><h3>Custom tailoring</h3><p>Send your measurements and style. We sew it to fit you.</p></div>
-  <div><h3>Fabrics</h3><p>Cashmere, cotton and adire print materials.</p></div>
- </div></div></section>
-<section id="shop" style="padding-top:0"><div class="wrap">
- <div class="sh"><h2>Shop the collection</h2><p>Sizes are listed by width. Message us your measurements if you are between sizes.</p></div>
- <div class="grid"><article class="card">
-  <div class="ph"><img src="img/p08.jpg" alt="Brown Striped Three-Quarter Sleeve Senator on a mannequin" loading="lazy"></div>
-  <div class="info"><p class="cat">Senator</p><h3>Brown Striped Three-Quarter Sleeve Senator</h3><p class="meta"><span>Width 45</span><strong>$130.00</strong></p>
-  <a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp</a></div>
-</article>
-<article class="card">
-  <div class="ph"><img src="img/p07.jpg" alt="White Three-Quarter Sleeve Senator on a mannequin" loading="lazy"></div>
-  <div class="info"><p class="cat">Senator</p><h3>White Three-Quarter Sleeve Senator</h3><p class="meta"><span>Width 44</span><strong>$140.00</strong></p>
-  <a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp</a></div>
-</article>
-<article class="card">
-  <div class="ph"><img src="img/p06.jpg" alt="Blue Long Sleeve Senator on a mannequin" loading="lazy"></div>
-  <div class="info"><p class="cat">Senator</p><h3>Blue Long Sleeve Senator</h3><p class="meta"><span>Width 47</span><strong>$140.00</strong></p>
-  <a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp</a></div>
-</article>
-<article class="card">
-  <div class="ph"><img src="img/p05.jpg" alt="White Striped Short Sleeve Senator on a mannequin" loading="lazy"></div>
-  <div class="info"><p class="cat">Senator</p><h3>White Striped Short Sleeve Senator</h3><p class="meta"><span>Sizes on request</span><strong>$130.00</strong></p>
-  <a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp</a></div>
-</article>
-<article class="card">
-  <div class="ph"><img src="img/p04.jpg" alt="Off-White Short Sleeve Senator on a mannequin" loading="lazy"></div>
-  <div class="info"><p class="cat">Senator</p><h3>Off-White Short Sleeve Senator</h3><p class="meta"><span>Width 47</span><strong>$130.00</strong></p>
-  <a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp</a></div>
-</article>
-<article class="card">
-  <div class="ph"><img src="img/p03.jpg" alt="White Longline Senator Set on a mannequin" loading="lazy"></div>
-  <div class="info"><p class="cat">Senator</p><h3>White Longline Senator Set</h3><p class="meta"><span>Sizes on request</span><strong>$140.00</strong></p>
-  <a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp</a></div>
-</article>
-<article class="card">
-  <div class="ph"><img src="img/p01.jpg" alt="Plum Stone-Detail Long Senator on a mannequin" loading="lazy"></div>
-  <div class="info"><p class="cat">Occasion wear</p><h3>Plum Stone-Detail Long Senator</h3><p class="meta"><span>Sizes on request</span><strong>$170.00*</strong></p>
-  <a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp</a></div>
-</article>
-<article class="card">
-  <div class="ph"><img src="img/p11.jpg" alt="Wine Stone-Detail Set with Cap on a mannequin" loading="lazy"></div>
-  <div class="info"><p class="cat">Occasion wear</p><h3>Wine Stone-Detail Set with Cap</h3><p class="meta"><span>Sizes on request</span><strong>$180.00*</strong></p>
-  <a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp</a></div>
-</article>
-<article class="card">
-  <div class="ph"><img src="img/p15.jpg" alt="Navy Embroidered Three-Quarter Senator on a mannequin" loading="lazy"></div>
-  <div class="info"><p class="cat">Senator</p><h3>Navy Embroidered Three-Quarter Senator</h3><p class="meta"><span>Sizes on request</span><strong>$150.00*</strong></p>
-  <a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp</a></div>
-</article>
-<article class="card">
-  <div class="ph"><img src="img/p13.jpg" alt="Grey Triple-Emblem Senator on a mannequin" loading="lazy"></div>
-  <div class="info"><p class="cat">Senator</p><h3>Grey Triple-Emblem Senator</h3><p class="meta"><span>Sizes on request</span><strong>$140.00*</strong></p>
-  <a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp</a></div>
-</article>
-<article class="card">
-  <div class="ph"><img src="img/p14.jpg" alt="Ivory Wide-Sleeve Senator on a mannequin" loading="lazy"></div>
-  <div class="info"><p class="cat">Senator</p><h3>Ivory Wide-Sleeve Senator</h3><p class="meta"><span>Sizes on request</span><strong>$150.00*</strong></p>
-  <a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp</a></div>
-</article>
-<article class="card">
-  <div class="ph"><img src="img/p12.jpg" alt="Adire Print Trousers on a mannequin" loading="lazy"></div>
-  <div class="info"><p class="cat">Separates</p><h3>Adire Print Trousers</h3><p class="meta"><span>Sizes on request</span><strong>$60.00*</strong></p>
-  <a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp</a></div>
-</article></div><p class="note">All prices are in US dollars (USD). * Sample price for layout; final prices and sizes to be confirmed.</p>
-</div></section>
-<section style="padding-top:0"><div class="wrap"><div class="cta">
- <div><h2>Want something sewn just for you?</h2><p>Send a style photo and your measurements. We will quote and sew it.</p></div>
- <a class="btn y" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order custom tailoring</a>
-</div></div></section>
-<footer id="contact"><div class="wrap"><div class="foot">
- <div><div class="logo" style="color:var(--sand)">Amusa <span>Signature</span> Suite</div><p style="margin-top:12px">Men's native wear, tailoring and fabrics.</p></div>
- <div><h4>Order</h4><p>WhatsApp +1 (346) 204-0896</p></div>
- <div><h4>Shop</h4><p>Senators</p><p>Occasion wear</p><p>Fabrics</p></div>
-</div><p class="copy">© 2026 Amusa Signature Suite</p></div></footer>
-</body></html>
+<body>
+    <div class="demo-bar"><a href="index.html">&larr; All styles</a><span>Adire</span></div>
+    <header class="site">
+        <div class="wrap">
+            <nav class="nav"><a class="logo" href="v3-adire.html">Amusa <span>Signature</span> Suite</a>
+                <ul>
+                    <li><a href="v3-adire.html#shop">Shop</a></li>
+                    <li><a href="v3-adire.html#how">How to order</a></li>
+                    <li><a href="v3-adire.html#contact">Contact</a></li>
+                    <li><a class="cart-link" href="cart.html">Cart <span class="cart-count">0</span></a></li>
+                </ul>
+            </nav>
+
+            <div class="hero">
+                <div>
+                    <span class="tag">Ready-to-wear · Senators · Occasion wear</span>
+                    <h1>Wear your culture <em>with confidence.</em></h1>
+                    <p>Bold, well-cut native wear, ready to ship. Choose your outfit, pick your size and check out
+                        securely in minutes.</p>
+                    <div class="btns"><a class="btn y" href="#shop">Shop the collection</a><a class="btn o"
+                            href="#how">How ordering works</a></div>
+                </div>
+                <div class="hero-pic"><img src="img/p11.jpg" alt="Wine stone-detail set with cap"></div>
+            </div>
+        </div>
+    </header>
+    <div class="strip">Ready-to-wear · Secure online checkout · Delivered to your door</div>
+    <section>
+        <div class="wrap">
+            <div class="svc">
+                <div>
+                    <h3>Ready to wear</h3>
+                    <p>Every outfit is finished and ready to ship. Sizes are listed on each product.</p>
+                </div>
+                <div>
+                    <h3>Pay securely online</h3>
+                    <p>Check out with your card, Apple Pay, Google Pay or PayPal.</p>
+                </div>
+                <div>
+                    <h3>Delivered to you</h3>
+                    <p>Order confirmation by email, with tracking once your outfit ships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="shop" style="padding-top:0">
+        <div class="wrap">
+            <div class="sh">
+                <h2>Shop the collection</h2>
+                <p>Tap any outfit to see the full photo, size and details.</p>
+            </div>
+            <div class="grid" id="grid"></div>
+            <p class="note">All prices are in US dollars (USD). * Placeholder price; final prices and sizes will be
+                updated.</p>
+        </div>
+    </section>
+    <section id="how" style="padding-top:0">
+        <div class="wrap">
+            <div class="sh">
+                <h2>How to order</h2>
+            </div>
+            <div class="how">
+                <div>
+                    <p class="n">1</p>
+                    <h3>Choose your outfit</h3>
+                    <p>Open any product to view the full photo, price and available size.</p>
+                </div>
+                <div>
+                    <p class="n">2</p>
+                    <h3>Add to cart</h3>
+                    <p>Pick your size and quantity, then add it to your cart.</p>
+                </div>
+                <div>
+                    <p class="n">3</p>
+                    <h3>Check out securely</h3>
+                    <p>Enter your delivery address and pay online. You get an email confirmation right away.</p>
+                </div>
+            </div>
+            <div class="pay" aria-label="Payment methods">
+                <span>Visa</span><span>Mastercard</span><span>Amex</span><span>Apple Pay</span><span>Google
+                    Pay</span><span>PayPal</span></div>
+        </div>
+    </section>
+    <footer id="contact">
+        <div class="wrap">
+            <div class="foot">
+                <div><a class="logo" href="v3-adire.html" style="color:var(--sand)">Amusa <span>Signature</span>
+                        Suite</a>
+                    <p style="margin-top:12px">Ready-to-wear men's native fashion.</p>
+                </div>
+                <div>
+                    <h4>Help</h4>
+                    <p>Questions about an order or sizing?</p>
+                    <p>WhatsApp +1 (346) 204-0896</p>
+                </div>
+                <div>
+                    <h4>Shop</h4>
+                    <p><a href="v3-adire.html#shop">Senators</a></p>
+                    <p><a href="v3-adire.html#shop">Occasion wear</a></p>
+                    <p><a href="cart.html">Your cart</a></p>
+                </div>
+            </div>
+            <p class="copy">© 2026 Amusa Signature Suite</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('grid').innerHTML = PRODUCTS.map(p => `
+<a class="card" href="product.html?id=${p.id}">
+ <div class="ph"><img src="${p.imgs[0]}" alt="${p.name}" loading="lazy"><span class="quick">View details</span></div>
+ <div class="info"><p class="cat">${p.cat}</p><h3>${p.name}</h3>
+ <p class="meta"><span>${p.sizes.length ? 'Width ' + p.sizes.join(', ') : 'Size to be confirmed'}</span><strong>${priceLabel(p)}</strong></p></div>
+</a>`).join('');
+    </script>
+</body>
+
+</html>

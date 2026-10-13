@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Amusa Adire Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Outfit:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="adire.css">
+    <script src="adire.js"></script>
+</head>
+
+<body>
+    <div class="demo-bar"><a href="index.html">&larr; All styles</a><span>Adire</span></div>
+    <header class="site">
+        <div class="wrap">
+            <nav class="nav"><a class="logo" href="v3-adire.html">Amusa <span>Signature</span> Suite</a>
+                <ul>
+                    <li><a href="v3-adire.html#shop">Shop</a></li>
+                    <li><a href="v3-adire.html#how">How to order</a></li>
+                    <li><a href="v3-adire.html#contact">Contact</a></li>
+                    <li><a class="cart-link" href="cart.html">Cart <span class="cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="wrap">
+        <p class="crumbs"><a href="v3-adire.html">Home</a> / <a href="v3-adire.html#shop">Shop</a> / <span
+                id="crumb"></span></p>
+        <div class="pd">
+            <div class="gallery" id="gallery">
+                <div class="thumbs" id="thumbs"></div>
+                <div class="main-img" id="main" title="Click to zoom"><img id="mainImg" src="" alt=""><span
+                        class="hint">Click to zoom</span></div>
+            </div>
+            <div class="pinfo">
+                <p class="cat" id="cat"></p>
+                <h1 id="name"></h1>
+                <p class="price" id="price"></p>
+                <p class="small" id="pnote"></p>
+                <p id="desc"></p>
+                <div class="field"><label>Size (width)</label>
+                    <div class="sizes" id="sizes"></div>
+                </div>
+                <div class="field"><label for="qty">Quantity</label>
+                    <div class="qty"><button type="button" id="minus"
+                            aria-label="Decrease quantity">&minus;</button><input id="qty" type="number" min="1"
+                            value="1" inputmode="numeric"><button type="button" id="plus"
+                            aria-label="Increase quantity">+</button></div>
+                </div>
+                <div class="actions"><button class="btn i" id="add" type="button">Add to cart</button><button
+                        class="btn y" id="buy" type="button">Buy now</button></div>
+                <div class="details">
+                    <div>
+                        <h3>What's included</h3>
+                        <p>Top and matching trousers, unless stated otherwise.</p>
+                    </div>
+                    <div>
+                        <h3>Sizing</h3>
+                        <p>Sizes are listed by chest width. Message us on WhatsApp if you need help choosing.</p>
+                    </div>
+                    <div>
+                        <h3>Delivery</h3>
+                        <p>Ships after payment is confirmed. Tracking details are sent by email.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section style="padding-top:0">
+            <div class="sh">
+                <h2>You may also like</h2>
+            </div>
+            <div class="grid" id="more"></div>
+        </section>
+    </main>
+    <footer id="contact">
+        <div class="wrap">
+            <div class="foot">
+                <div><a class="logo" href="v3-adire.html" style="color:var(--sand)">Amusa <span>Signature</span>
+                        Suite</a>
+                    <p style="margin-top:12px">Ready-to-wear men's native fashion.</p>
+                </div>
+                <div>
+                    <h4>Help</h4>
+                    <p>Questions about an order or sizing?</p>
+                    <p>WhatsApp +1 (346) 204-0896</p>
+                </div>
+                <div>
+                    <h4>Shop</h4>
+                    <p><a href="v3-adire.html#shop">Senators</a></p>
+                    <p><a href="v3-adire.html#shop">Occasion wear</a></p>
+                    <p><a href="cart.html">Your cart</a></p>
+                </div>
+            </div>
+            <p class="copy">© 2026 Amusa Signature Suite</p>
+        </div>
+    </footer>
+    <script>
+        const $ = i => document.getElementById(i);
+        const [crumb, pcat, pname, pprice, pnote, desc, mainImg, thumbs, gallery, mainBox, sizes, qty, minus, plus, add, buy, more] = ["crumb", "cat", "name", "price", "pnote", "desc", "mainImg", "thumbs", "gallery", "main", "sizes", "qty", "minus", "plus", "add", "buy", "more"].map($);
+        const id = new URLSearchParams(location.search).get('id');
+        const p = findProduct(id) || PRODUCTS[0];
+        document.title = p.name + ' | Amusa Signature Suite';
+        crumb.textContent = p.name; pcat.textContent = p.cat; pname.textContent = p.name;
+        pprice.textContent = priceLabel(p);
+        pnote.textContent = p.confirmed ? 'Price in US dollars (USD).' : 'Placeholder price in US dollars (USD).';
+        desc.textContent = p.desc;
+        mainImg.src = p.imgs[0]; mainImg.alt = p.name;
+        if (p.imgs.length > 1) {
+            thumbs.innerHTML = p.imgs.map((s, i) => `<button type="button" aria-pressed="${i === 0}" data-src="${s}"><img src="${s}" alt="View ${i + 1}"></button>`).join('');
+            thumbs.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; mainImg.src = b.dataset.src; thumbs.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); });
+        } else { thumbs.hidden = true; gallery.style.gridTemplateColumns = '1fr'; }
+        mainBox.addEventListener('click', e => {
+            const r = mainBox.getBoundingClientRect();
+            mainImg.style.transformOrigin = ((e.clientX - r.left) / r.width * 100) + '% ' + ((e.clientY - r.top) / r.height * 100) + '%';
+            mainBox.classList.toggle('zoom');
+        });
+        const opts = p.sizes.length ? p.sizes : ['TBC'];
+        let size = opts[0];
+        sizes.innerHTML = opts.map((s, i) => `<button type="button" aria-pressed="${i === 0}">${s === 'TBC' ? 'To be confirmed' : s}</button>`).join('');
+        sizes.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; size = opts[[...sizes.children].indexOf(b)];[...sizes.children].forEach(x => x.setAttribute('aria-pressed', x === b)); });
+        const getQty = () => Math.max(1, parseInt(qty.value) || 1);
+        minus.onclick = () => qty.value = Math.max(1, getQty() - 1);
+        plus.onclick = () => qty.value = getQty() + 1;
+        add.onclick = () => { addToCart(p.id, size, getQty()); toast('Added to your cart.<a href="cart.html">View cart</a>'); };
+        buy.onclick = () => { addToCart(p.id, size, getQty()); location.href = 'cart.html'; };
+        more.innerHTML = PRODUCTS.filter(x => x.id !== p.id).slice(0, 4).map(x => `
+<a class="card" href="product.html?id=${x.id}"><div class="ph"><img src="${x.imgs[0]}" alt="${x.name}" loading="lazy"></div>
+<div class="info"><p class="cat">${x.cat}</p><h3>${x.name}</h3><p class="meta"><span></span><strong>${priceLabel(x)}</strong></p></div></a>`).join('');
+    </script>
+</body>
+
+</html>
