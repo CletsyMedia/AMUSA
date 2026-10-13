@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amusa Atelier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0} img{max-width:100%;display:block} a{color:inherit}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.demo-bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:8px 16px;font:500 12px/1.4 system-ui,sans-serif;background:#111;color:#eee;letter-spacing:.02em}.demo-bar a{color:#fff;text-decoration:none}
+/* Atelier: white gallery, everything left-aligned, oversized serif, a 2-column lookbook and one black band. */
+:root{--paper:#FFFFFF;--stone:#F1EFEB;--ink:#141414;--mute:#6B6B68;--line:#E2DFDA;--blue:#2E5B86;
+--display:"Bodoni Moda",Didot,Georgia,serif;--body:"Manrope",system-ui,sans-serif;color-scheme:light}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--body)}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:24px}
+.top{background:var(--ink);color:#fff;font-size:12px;letter-spacing:.1em;padding:9px 24px;text-align:center}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px;flex-wrap:wrap}
+.logo{font:500 28px/1 var(--display)}.logo small{font:600 10px/1 var(--body);letter-spacing:.3em;text-transform:uppercase;color:var(--mute);margin-left:10px;vertical-align:middle}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:14px;font-weight:500;flex-wrap:wrap}.nav a{text-decoration:none}.nav a:hover{color:var(--blue)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;min-height:0;border-top:1px solid var(--line)}
+.hero .txt{padding:64px 48px 64px 0;display:flex;flex-direction:column;justify-content:center}
+.hero h1{font:400 clamp(46px,7vw,104px)/.92 var(--display);margin:0 0 24px;letter-spacing:-.02em}
+.hero h1 i{color:var(--blue)}
+.hero p{max-width:38ch;color:var(--mute);margin:0 0 28px;font-size:17px}
+.btn{display:inline-block;padding:15px 30px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;font-size:14px}.btn:hover{background:var(--blue)}
+.hero img{width:100%;height:100%;min-height:420px;aspect-ratio:4/5;object-fit:cover;object-position:50% 58%}
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-block:40px;border-bottom:1px solid var(--line)}
+.cats div{border-top:2px solid var(--ink);padding-top:14px}
+.cats h3{font:500 24px/1.2 var(--display);margin:0 0 4px}.cats p{margin:0;color:var(--mute);font-size:15px}
+section{padding-block:72px}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:36px;flex-wrap:wrap}
+.sh h2{font:400 clamp(34px,5vw,64px)/1 var(--display);margin:0}.sh p{margin:0;color:var(--mute);max-width:40ch}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:56px 32px}
+.ph{background:var(--stone)}.ph img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 58%}
+.row{display:flex;justify-content:space-between;gap:16px;align-items:baseline;margin-top:16px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.row h3{font:500 22px/1.2 var(--display);margin:0}.row strong{font-size:18px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.meta{margin:10px 0 8px;color:var(--mute);font-size:14px}
+.btn-sm{font-size:14px;font-weight:600;color:var(--blue);text-decoration:none}
+.note{font-size:13px;color:var(--mute);margin-top:32px}
+.band{background:var(--ink);color:#fff}
+.band .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.band img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 55%}
+.band h2{font:400 clamp(34px,5vw,60px)/1 var(--display);margin:0 0 16px}
+.band p{color:#BDBDBA}.band ol{padding-left:20px;margin:20px 0 28px}.band li{margin-bottom:12px}.band li strong{display:block}
+.band .btn{background:#fff;color:var(--ink)}.band .btn:hover{background:var(--blue);color:#fff}
+footer{padding-block:36px;border-top:1px solid var(--line);font-size:14px;color:var(--mute)}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:860px){.hero,.band .wrap{grid-template-columns:1fr}.hero .txt{padding:40px 0}.hero img{min-height:0}.cats{grid-template-columns:1fr}section{padding-block:52px}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+
+</style></head><body>
+<div class="demo-bar"><a href="index.html">&larr; All designs</a><span>Design 2 · Atelier</span></div>
+<div class="top">Custom tailoring available · Order on WhatsApp +1 (346) 204-0896</div>
+<div class="wrap">
+ <nav class="nav"><div class="logo">Amusa<small>Signature Suite</small></div>
+ <ul><li><a href="#shop">Shop</a></li><li><a href="#tailoring">Tailoring</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+ <div class="hero"><div class="txt"><h1>Native wear,<br><i>made to measure.</i></h1>
+  <p>Clean-cut senator sets, occasion wear and quality fabrics for men who want to look finished.</p>
+  <div><a class="btn" href="#shop">Shop the lookbook</a></div></div>
+  <img src="img/p06.jpg" alt="Blue long sleeve senator"></div>
+ <div class="cats">
+  <div><h3>Ready-to-wear</h3><p>Finished senator sets with matching trousers.</p></div>
+  <div><h3>Custom tailoring</h3><p>Your style, sewn to your measurements.</p></div>
+  <div><h3>Fabrics</h3><p>Cashmere, cotton and print materials.</p></div>
+ </div>
+</div>
+<section id="shop"><div class="wrap">
+ <div class="sh"><h2>Lookbook</h2><p>Sizes are listed by width. Send your measurements on WhatsApp if you are unsure.</p></div>
+ <div class="grid"><article class="card"><div class="ph"><img src="img/p08.jpg" alt="Brown Striped Three-Quarter Sleeve Senator on a mannequin" loading="lazy"></div>
+<div class="row"><h3>Brown Striped Three-Quarter Sleeve Senator</h3><strong>$130.00</strong></div>
+<p class="meta">Senator · Width 45</p><a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp &rarr;</a></article>
+<article class="card"><div class="ph"><img src="img/p07.jpg" alt="White Three-Quarter Sleeve Senator on a mannequin" loading="lazy"></div>
+<div class="row"><h3>White Three-Quarter Sleeve Senator</h3><strong>$140.00</strong></div>
+<p class="meta">Senator · Width 44</p><a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp &rarr;</a></article>
+<article class="card"><div class="ph"><img src="img/p06.jpg" alt="Blue Long Sleeve Senator on a mannequin" loading="lazy"></div>
+<div class="row"><h3>Blue Long Sleeve Senator</h3><strong>$140.00</strong></div>
+<p class="meta">Senator · Width 47</p><a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp &rarr;</a></article>
+<article class="card"><div class="ph"><img src="img/p05.jpg" alt="White Striped Short Sleeve Senator on a mannequin" loading="lazy"></div>
+<div class="row"><h3>White Striped Short Sleeve Senator</h3><strong>$130.00</strong></div>
+<p class="meta">Senator · Sizes on request</p><a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp &rarr;</a></article>
+<article class="card"><div class="ph"><img src="img/p04.jpg" alt="Off-White Short Sleeve Senator on a mannequin" loading="lazy"></div>
+<div class="row"><h3>Off-White Short Sleeve Senator</h3><strong>$130.00</strong></div>
+<p class="meta">Senator · Width 47</p><a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp &rarr;</a></article>
+<article class="card"><div class="ph"><img src="img/p03.jpg" alt="White Longline Senator Set on a mannequin" loading="lazy"></div>
+<div class="row"><h3>White Longline Senator Set</h3><strong>$140.00</strong></div>
+<p class="meta">Senator · Sizes on request</p><a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp &rarr;</a></article>
+<article class="card"><div class="ph"><img src="img/p01.jpg" alt="Plum Stone-Detail Long Senator on a mannequin" loading="lazy"></div>
+<div class="row"><h3>Plum Stone-Detail Long Senator</h3><strong>$170.00*</strong></div>
+<p class="meta">Occasion wear · Sizes on request</p><a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp &rarr;</a></article>
+<article class="card"><div class="ph"><img src="img/p11.jpg" alt="Wine Stone-Detail Set with Cap on a mannequin" loading="lazy"></div>
+<div class="row"><h3>Wine Stone-Detail Set with Cap</h3><strong>$180.00*</strong></div>
+<p class="meta">Occasion wear · Sizes on request</p><a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp &rarr;</a></article>
+<article class="card"><div class="ph"><img src="img/p15.jpg" alt="Navy Embroidered Three-Quarter Senator on a mannequin" loading="lazy"></div>
+<div class="row"><h3>Navy Embroidered Three-Quarter Senator</h3><strong>$150.00*</strong></div>
+<p class="meta">Senator · Sizes on request</p><a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp &rarr;</a></article>
+<article class="card"><div class="ph"><img src="img/p13.jpg" alt="Grey Triple-Emblem Senator on a mannequin" loading="lazy"></div>
+<div class="row"><h3>Grey Triple-Emblem Senator</h3><strong>$140.00*</strong></div>
+<p class="meta">Senator · Sizes on request</p><a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp &rarr;</a></article>
+<article class="card"><div class="ph"><img src="img/p14.jpg" alt="Ivory Wide-Sleeve Senator on a mannequin" loading="lazy"></div>
+<div class="row"><h3>Ivory Wide-Sleeve Senator</h3><strong>$150.00*</strong></div>
+<p class="meta">Senator · Sizes on request</p><a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp &rarr;</a></article>
+<article class="card"><div class="ph"><img src="img/p12.jpg" alt="Adire Print Trousers on a mannequin" loading="lazy"></div>
+<div class="row"><h3>Adire Print Trousers</h3><strong>$60.00*</strong></div>
+<p class="meta">Separates · Sizes on request</p><a class="btn-sm" href="https://wa.me/13462040896" target="_blank" rel="noopener">Order on WhatsApp &rarr;</a></article></div><p class="note">All prices are in US dollars (USD). * Sample price for layout; final prices and sizes to be confirmed.</p>
+</div></section>
+<section class="band" id="tailoring"><div class="wrap">
+ <div><h2>Have it sewn for you.</h2><p>Pick a style from the lookbook or bring your own idea. We cut and sew it to your size.</p>
+ <ol><li><strong>Send your style</strong>A photo or a piece from the lookbook.</li><li><strong>Share measurements</strong>Or book a fitting.</li><li><strong>Approve and pay</strong>We sew, finish and deliver.</li></ol>
+ <a class="btn" href="https://wa.me/13462040896" target="_blank" rel="noopener">Start on WhatsApp</a></div>
+ <img src="img/p07.jpg" alt="White three-quarter sleeve senator">
+</div></section>
+<footer id="contact"><div class="wrap foot"><span>Amusa Signature Suite</span><span>WhatsApp +1 (346) 204-0896</span><span>© 2026</span></div></footer>
+</body></html>
