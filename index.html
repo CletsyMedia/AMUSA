@@ -1,135 +1,341 @@
-<title>Amusa Website Options</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&family=Bodoni+Moda:wght@500&family=Manrope:wght@400;600&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Outfit:wght@400;500&family=Pinyon+Script&display=swap">
-<style>
-/* Layout: proposal sheet. Intro, three option cards side by side, then full specs per design. */
-:root{--bg:#FAF7F4;--surface:#FFFFFF;--fg:#221B20;--mute:#6C6168;--line:#E7DFD8;--accent:#7A3A4A;--accent-fg:#FFFFFF;--chip:#F2EBE5;
---display:"Cormorant Garamond",Georgia,serif;--script:"Pinyon Script",cursive;--body:"Jost",system-ui,sans-serif}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#18141A;--surface:#221D24;--fg:#EFE8EC;--mute:#ABA0A7;--line:#3A323C;--accent:#D49AA9;--accent-fg:#1A1218;--chip:#2C2530;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#18141A;--surface:#221D24;--fg:#EFE8EC;--mute:#ABA0A7;--line:#3A323C;--accent:#D49AA9;--accent-fg:#1A1218;--chip:#2C2530;color-scheme:dark}
-body{background:var(--bg);color:var(--fg);font:400 16px/1.6 var(--body)}
-.wrap{max-width:1160px;margin:0 auto;padding-inline:20px;padding-block:40px 64px}
-.intro{max-width:680px;margin-bottom:36px}
-.brand{font:400 30px/1 var(--script);color:var(--accent);margin:0}
-h1{font:600 clamp(34px,5vw,54px)/1.05 var(--display);margin:6px 0 14px;text-wrap:balance}
-.intro p{color:var(--mute);margin:0 0 10px}
-.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 6px;font-weight:500}
-.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.opt{background:var(--obg);color:var(--ofg);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}.opt .eyebrow{color:var(--oac)}.opt .mood{color:var(--ofg);opacity:.8}.opt .open{background:var(--oac);color:var(--obg)}
-.opt-img{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line)}
-.opt-img img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 60%}
-.opt-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
-.opt h3{font-size:32px;line-height:1;margin:0;font-weight:600}
-.mood{margin:0;color:var(--mute);font-size:15px;flex:1}
-.sws{display:flex;gap:6px;flex-wrap:wrap}
-.sw{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);display:inline-block;flex:none}
-.sw.sm{width:16px;height:16px;vertical-align:-3px;margin-right:8px}
-.fontline{margin:0;font-size:18px}
-.open{display:block;text-align:center;background:var(--accent);color:var(--accent-fg);text-decoration:none;padding:12px;font-weight:500;letter-spacing:.04em}
-.open:hover{opacity:.9}
-.choose{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.box{background:var(--chip);padding:24px}
-.box h2{font:600 26px/1.1 var(--display);margin:0 0 10px}
-.box ol,.box ul{margin:0;padding-left:20px}.box li{margin-bottom:6px}
-.specs-title{font:600 clamp(28px,4vw,40px)/1.1 var(--display);margin:56px 0 4px}
-.specs-sub{color:var(--mute);margin:0 0 8px}
-.jump{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px}
-.jump a{color:var(--accent);font-weight:500}
-.spec{border-top:2px solid var(--fg);margin-top:36px;padding-top:20px}
-.spec-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
-.spec-head h3{font:600 30px/1.1 var(--display);margin:0;flex:1}
-.spec-head a{color:var(--accent);font-weight:500}
-h4{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin:24px 0 8px;font-weight:500}
-.tbl{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:15px;background:var(--surface)}
-th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-weight:500;color:var(--mute);font-size:13px}
-td:first-child{white-space:nowrap}
-.num{font-variant-numeric:tabular-nums;white-space:nowrap}
-code{font:500 14px/1 ui-monospace,Menlo,monospace;background:var(--chip);padding:3px 6px;user-select:all}
-.foot{margin-top:48px;color:var(--mute);font-size:14px}
-@media (max-width:900px){.opts,.choose{grid-template-columns:1fr}}
-</style>
-<div class="wrap">
- <header class="intro">
-  <p class="brand">Amusa Signature Suite</p>
-  <h1>Choose your website design</h1>
-  <p>Here are three homepage designs for your store, built with your own product photos. Each one includes your senators, custom tailoring and fabrics, with an "Order on WhatsApp" button on every product.</p>
-  <p>Open each design, look at it on your phone and computer, then tell us which one you like.</p>
- </header>
- <div class="opts"><article class="opt" style="--obg:#1E1320;--ofg:#F1E9DE;--oac:#C49A5A">
-  <div class="opt-img"><img src="img/p01.jpg" alt=""><img src="img/p11.jpg" alt=""></div>
-  <div class="opt-body">
-    <p class="eyebrow">Design 1</p>
-    <h3 style="font-family:"Cormorant Garamond",Georgia,serif">Heritage</h3>
-    <p class="mood">Dark and luxurious. The whole site sits on deep aubergine, everything is centered, with gold lines and a script accent. Opens with three outfits side by side, then one featured piece, then a 3-column gallery.</p>
-    <div class="sws" aria-label="Color palette"><span class="sw" style="background:#1E1320" title="Aubergine #1E1320"></span><span class="sw" style="background:#2A1A2C" title="Plum panel #2A1A2C"></span><span class="sw" style="background:#C49A5A" title="Gold #C49A5A"></span><span class="sw" style="background:#F1E9DE" title="Bone #F1E9DE"></span><span class="sw" style="background:#CDBFC6" title="Soft mauve #CDBFC6"></span><span class="sw" style="background:#C49A5A at 35% opacity" title="Gold line #C49A5A at 35% opacity"></span></div>
-    <p class="fontline"><span style="font-family:"Cormorant Garamond",Georgia,serif">Cormorant Garamond</span> + <span style="font-family:"Jost",system-ui,sans-serif">Jost</span></p>
-    <a class="open" href="v1-heritage.html">Open design 1</a>
-  </div>
-</article><article class="opt" style="--obg:#FFFFFF;--ofg:#141414;--oac:#2E5B86">
-  <div class="opt-img"><img src="img/p06.jpg" alt=""><img src="img/p07.jpg" alt=""></div>
-  <div class="opt-body">
-    <p class="eyebrow">Design 2</p>
-    <h3 style="font-family:"Bodoni Moda",Didot,Georgia,serif">Atelier</h3>
-    <p class="mood">Clean and modern. White pages, left-aligned text, oversized serif headings and one blue accent from the blue senator. Big split hero, a 2-column lookbook with large photos, and one black tailoring band.</p>
-    <div class="sws" aria-label="Color palette"><span class="sw" style="background:#FFFFFF" title="Paper white #FFFFFF"></span><span class="sw" style="background:#F1EFEB" title="Stone #F1EFEB"></span><span class="sw" style="background:#141414" title="Ink #141414"></span><span class="sw" style="background:#6B6B68" title="Muted #6B6B68"></span><span class="sw" style="background:#E2DFDA" title="Line #E2DFDA"></span><span class="sw" style="background:#2E5B86" title="Senator blue #2E5B86"></span></div>
-    <p class="fontline"><span style="font-family:"Bodoni Moda",Didot,Georgia,serif">Bodoni Moda</span> + <span style="font-family:"Manrope",system-ui,sans-serif">Manrope</span></p>
-    <a class="open" href="v2-atelier.html">Open design 2</a>
-  </div>
-</article><article class="opt" style="--obg:#1D2545;--ofg:#F3EBDD;--oac:#E9A23B">
-  <div class="opt-img"><img src="img/p11.jpg" alt=""><img src="img/p12.jpg" alt=""></div>
-  <div class="opt-body">
-    <p class="eyebrow">Design 3</p>
-    <h3 style="font-family:"Fraunces",Georgia,serif">Adire</h3>
-    <p class="mood">Bold and colorful. Indigo, marigold and rust taken from the adire print trousers. Colored blocks, rounded corners, a 4-column shop grid with full buttons and a rust call-to-action banner.</p>
-    <div class="sws" aria-label="Color palette"><span class="sw" style="background:#1D2545" title="Indigo #1D2545"></span><span class="sw" style="background:#E9A23B" title="Marigold #E9A23B"></span><span class="sw" style="background:#B9532C" title="Rust #B9532C"></span><span class="sw" style="background:#F3EBDD" title="Sand #F3EBDD"></span><span class="sw" style="background:#1B1B24" title="Ink #1B1B24"></span><span class="sw" style="background:#5E5A55" title="Muted #5E5A55"></span></div>
-    <p class="fontline"><span style="font-family:"Fraunces",Georgia,serif">Fraunces</span> + <span style="font-family:"Outfit",system-ui,sans-serif">Outfit</span></p>
-    <a class="open" href="v3-adire.html">Open design 3</a>
-  </div>
-</article></div>
- <div class="choose">
-  <div class="box"><h2>How to choose</h2><ol>
-   <li>Open all three designs.</li>
-   <li>Reply with the number you prefer: Design 1, 2 or 3.</li>
-   <li>You can also mix, for example "Design 2 layout with Design 3 colors".</li>
-   <li>Send any changes: logo, prices, sizes, more photos.</li></ol></div>
-  <div class="box"><h2>Every design includes</h2><ul><li>Logo and menu</li><li>Opening section with headline, intro, buttons and photos</li><li>Ready-to-wear, custom tailoring and fabrics</li><li>All 12 products with size, USD price and an Order on WhatsApp link</li><li>Custom tailoring section</li><li>Footer with WhatsApp number</li></ul></div>
- </div>
+<!doctype html>
+<html lang="en">
 
- <h2 class="specs-title">How to build it in GoHighLevel</h2>
- <p class="specs-sub">Every design uses only basic GoHighLevel blocks: sections, rows, columns, Headline, Paragraph, Image, Button and Nav Menu. No custom code is needed.</p>
- <div class="box" style="margin-top:16px"><ol>
-  <li>Go to Sites, then Websites (or Funnels), and create a new blank page.</li>
-  <li>In page settings, add the two or three Google Fonts for the chosen design and set the page background color.</li>
-  <li>Upload the 12 product photos from the ghl-images folder to the Media library. They are already cropped to the same 3:4 size, so the product grid lines up.</li>
-  <li>Build the sections from top to bottom using the build table, colors and sizes in that design's specification below.</li>
-  <li>Check the mobile view. GoHighLevel stacks columns on phones automatically.</li>
- </ol></div>
- <h2 class="specs-title">Design specifications</h2>
- <p class="specs-sub">Exact colors, fonts and sizes for building the chosen design in GoHighLevel.</p>
- <nav class="jump" aria-label="Jump to a specification"><a href="#v1">Design 1: Heritage</a><a href="#v2">Design 2: Atelier</a><a href="#v3">Design 3: Adire</a></nav>
- <section class="spec" id="v1">
-  <div class="spec-head"><p class="eyebrow">Design 1</p><h3>Heritage specification</h3><a href="v1-heritage.html">View page</a></div>
-  <h4>Colors</h4><div class="tbl"><table><thead><tr><th>Name</th><th>Hex code</th><th>Where it is used</th></tr></thead><tbody><tr><td><span class="sw sm" style="background:#1E1320"></span>Aubergine</td><td><code>#1E1320</code></td><td>Page background for every section</td></tr><tr><td><span class="sw sm" style="background:#2A1A2C"></span>Plum panel</td><td><code>#2A1A2C</code></td><td>Featured piece box</td></tr><tr><td><span class="sw sm" style="background:#C49A5A"></span>Gold</td><td><code>#C49A5A</code></td><td>Script text, buttons, lines, prices label</td></tr><tr><td><span class="sw sm" style="background:#F1E9DE"></span>Bone</td><td><code>#F1E9DE</code></td><td>Headings and main text</td></tr><tr><td><span class="sw sm" style="background:#CDBFC6"></span>Soft mauve</td><td><code>#CDBFC6</code></td><td>Paragraphs and secondary text</td></tr><tr><td><span class="sw sm" style="background:#C49A5A at 35% opacity"></span>Gold line</td><td><code>#C49A5A at 35% opacity</code></td><td>Thin borders and dividers</td></tr></tbody></table></div>
-  <h4>Fonts (all free on Google Fonts)</h4><div class="tbl"><table><thead><tr><th>Use</th><th>Font</th><th>Weights</th></tr></thead><tbody><tr><td>Headings</td><td>Cormorant Garamond</td><td>500 / 600</td></tr><tr><td>Script accent</td><td>Pinyon Script</td><td>400</td></tr><tr><td>Body and buttons</td><td>Jost</td><td>400 / 500</td></tr></tbody></table></div>
-  <h4>Text sizes</h4><div class="tbl"><table><thead><tr><th>Element</th><th>Desktop</th><th>Mobile</th><th>Style</th></tr></thead><tbody><tr><td>Hero headline (H1)</td><td class="num">72px</td><td class="num">40px</td><td>Cormorant Garamond 500, centered</td></tr><tr><td>Script line under H1</td><td class="num">72px</td><td class="num">42px</td><td>Pinyon Script, gold</td></tr><tr><td>Section title (H2)</td><td class="num">46px</td><td class="num">30px</td><td>Cormorant Garamond 500, centered</td></tr><tr><td>Section label</td><td class="num">32px</td><td class="num">28px</td><td>Pinyon Script, gold</td></tr><tr><td>Featured product name</td><td class="num">42px</td><td class="num">30px</td><td>Cormorant Garamond 500</td></tr><tr><td>Product name</td><td class="num">22px</td><td class="num">20px</td><td>Cormorant Garamond 500</td></tr><tr><td>Body text</td><td class="num">16px</td><td class="num">16px</td><td>Jost 400, line height 1.65</td></tr><tr><td>Small labels and buttons</td><td class="num">12px to 13px</td><td class="num">12px</td><td>Jost, uppercase, 2 to 3px letter spacing</td></tr></tbody></table></div>
-  <h4>Layout and buttons</h4><div class="tbl"><table><tbody><tr><td>Alignment</td><td>Everything centered</td></tr><tr><td>Content width</td><td>1100px max</td></tr><tr><td>Section padding</td><td>80px top and bottom (56px mobile)</td></tr><tr><td>Product grid</td><td>3 columns desktop, 2 mobile, 32px gap</td></tr><tr><td>Product image</td><td>3:4 portrait inside a thin gold frame with 8px padding</td></tr><tr><td>Buttons</td><td>Square corners, gold outline or gold fill, 14px by 32px padding</td></tr><tr><td>Order link on products</td><td>Gold underlined text, not a box button</td></tr></tbody></table></div>
-  <h4>GoHighLevel build, section by section</h4><div class="tbl"><table><thead><tr><th>Section</th><th>Rows and columns</th><th>Elements</th></tr></thead><tbody><tr><td>Header</td><td>1 row, 1 column, centered</td><td>Headline "AMUSA", script Headline "Signature Suite", Nav Menu centered</td></tr><tr><td>Hero</td><td>1 row, 1 column, then 1 row, 3 columns</td><td>Small label, Headline, script Headline, Paragraph, 2 Buttons; then 3 Images</td></tr><tr><td>Signature piece</td><td>1 row, 2 columns on a plum background with gold border</td><td>Image left; label, Headline, price, Paragraph, Button right</td></tr><tr><td>Collection</td><td>4 rows, 3 columns (12 products)</td><td>Each column: Image with gold border, label, Headline, size and price Text, underlined text link</td></tr><tr><td>Tailoring</td><td>1 row, 3 columns, then 1 button</td><td>Each column: Roman numeral, Headline, Paragraph</td></tr><tr><td>Footer</td><td>1 row, 1 column, centered</td><td>Business name, WhatsApp number, links, copyright</td></tr></tbody></table></div>
-</section><section class="spec" id="v2">
-  <div class="spec-head"><p class="eyebrow">Design 2</p><h3>Atelier specification</h3><a href="v2-atelier.html">View page</a></div>
-  <h4>Colors</h4><div class="tbl"><table><thead><tr><th>Name</th><th>Hex code</th><th>Where it is used</th></tr></thead><tbody><tr><td><span class="sw sm" style="background:#FFFFFF"></span>Paper white</td><td><code>#FFFFFF</code></td><td>Page background</td></tr><tr><td><span class="sw sm" style="background:#F1EFEB"></span>Stone</td><td><code>#F1EFEB</code></td><td>Behind product photos</td></tr><tr><td><span class="sw sm" style="background:#141414"></span>Ink</td><td><code>#141414</code></td><td>Text, top bar, buttons, tailoring band</td></tr><tr><td><span class="sw sm" style="background:#6B6B68"></span>Muted</td><td><code>#6B6B68</code></td><td>Secondary text</td></tr><tr><td><span class="sw sm" style="background:#E2DFDA"></span>Line</td><td><code>#E2DFDA</code></td><td>Dividers</td></tr><tr><td><span class="sw sm" style="background:#2E5B86"></span>Senator blue</td><td><code>#2E5B86</code></td><td>Accent, links, button hover</td></tr></tbody></table></div>
-  <h4>Fonts (all free on Google Fonts)</h4><div class="tbl"><table><thead><tr><th>Use</th><th>Font</th><th>Weights</th></tr></thead><tbody><tr><td>Headings</td><td>Bodoni Moda</td><td>400 / 500, italic for accent words</td></tr><tr><td>Body and buttons</td><td>Manrope</td><td>400 / 500 / 600</td></tr></tbody></table></div>
-  <h4>Text sizes</h4><div class="tbl"><table><thead><tr><th>Element</th><th>Desktop</th><th>Mobile</th><th>Style</th></tr></thead><tbody><tr><td>Hero headline (H1)</td><td class="num">104px</td><td class="num">46px</td><td>Bodoni Moda 400, line height 0.92, left-aligned</td></tr><tr><td>Section title (H2)</td><td class="num">64px</td><td class="num">34px</td><td>Bodoni Moda 400</td></tr><tr><td>Category titles</td><td class="num">24px</td><td class="num">22px</td><td>Bodoni Moda 500</td></tr><tr><td>Product name</td><td class="num">22px</td><td class="num">20px</td><td>Bodoni Moda 500</td></tr><tr><td>Price</td><td class="num">18px</td><td class="num">18px</td><td>Manrope 600</td></tr><tr><td>Body text</td><td class="num">16px</td><td class="num">16px</td><td>Manrope 400, line height 1.6</td></tr><tr><td>Small labels</td><td class="num">11px</td><td class="num">11px</td><td>Manrope 600, uppercase, 2px letter spacing</td></tr><tr><td>Buttons</td><td class="num">14px</td><td class="num">14px</td><td>Manrope 600</td></tr></tbody></table></div>
-  <h4>Layout and buttons</h4><div class="tbl"><table><tbody><tr><td>Alignment</td><td>Everything left-aligned</td></tr><tr><td>Content width</td><td>1240px max</td></tr><tr><td>Section padding</td><td>72px top and bottom (52px mobile)</td></tr><tr><td>Product grid</td><td>2 large columns desktop, 1 mobile, 32px gap</td></tr><tr><td>Product image</td><td>4:5 portrait, name and price on one line under it with a thin divider</td></tr><tr><td>Buttons</td><td>Square black blocks, 15px by 30px padding; product links are blue text with an arrow</td></tr><tr><td>Tailoring section</td><td>Full-width black background, text left and photo right</td></tr></tbody></table></div>
-  <h4>GoHighLevel build, section by section</h4><div class="tbl"><table><thead><tr><th>Section</th><th>Rows and columns</th><th>Elements</th></tr></thead><tbody><tr><td>Top bar</td><td>1 row, 1 column, black background</td><td>One line of white Text</td></tr><tr><td>Header</td><td>1 row, 2 columns</td><td>Logo text left, Nav Menu right</td></tr><tr><td>Hero</td><td>1 row, 2 columns, no gap</td><td>Left: big Headline, Paragraph, Button. Right: one tall Image</td></tr><tr><td>Categories</td><td>1 row, 3 columns</td><td>Each: black top border, Headline, Paragraph</td></tr><tr><td>Lookbook</td><td>6 rows, 2 columns (12 products)</td><td>Each column: Image, Headline plus price on one line, Text, blue text link</td></tr><tr><td>Tailoring band</td><td>1 row, 2 columns, black background</td><td>Left: Headline, Paragraph, numbered list, white Button. Right: Image</td></tr><tr><td>Footer</td><td>1 row, 3 columns</td><td>Name, WhatsApp number, year</td></tr></tbody></table></div>
-</section><section class="spec" id="v3">
-  <div class="spec-head"><p class="eyebrow">Design 3</p><h3>Adire specification</h3><a href="v3-adire.html">View page</a></div>
-  <h4>Colors</h4><div class="tbl"><table><thead><tr><th>Name</th><th>Hex code</th><th>Where it is used</th></tr></thead><tbody><tr><td><span class="sw sm" style="background:#1D2545"></span>Indigo</td><td><code>#1D2545</code></td><td>Header, footer, buttons</td></tr><tr><td><span class="sw sm" style="background:#E9A23B"></span>Marigold</td><td><code>#E9A23B</code></td><td>Highlights, main button</td></tr><tr><td><span class="sw sm" style="background:#B9532C"></span>Rust</td><td><code>#B9532C</code></td><td>Custom tailoring banner, tags</td></tr><tr><td><span class="sw sm" style="background:#F3EBDD"></span>Sand</td><td><code>#F3EBDD</code></td><td>Page background</td></tr><tr><td><span class="sw sm" style="background:#1B1B24"></span>Ink</td><td><code>#1B1B24</code></td><td>Main text</td></tr><tr><td><span class="sw sm" style="background:#5E5A55"></span>Muted</td><td><code>#5E5A55</code></td><td>Secondary text</td></tr></tbody></table></div>
-  <h4>Fonts (all free on Google Fonts)</h4><div class="tbl"><table><thead><tr><th>Use</th><th>Font</th><th>Weights</th></tr></thead><tbody><tr><td>Headings and prices</td><td>Fraunces</td><td>500 / 600 / 700, italic for accent words</td></tr><tr><td>Body and buttons</td><td>Outfit</td><td>400 / 500 / 600</td></tr></tbody></table></div>
-  <h4>Text sizes</h4><div class="tbl"><table><thead><tr><th>Element</th><th>Desktop</th><th>Mobile</th><th>Style</th></tr></thead><tbody><tr><td>Hero headline (H1)</td><td class="num">76px</td><td class="num">40px</td><td>Fraunces 700, line height 1.0</td></tr><tr><td>Section title (H2)</td><td class="num">48px</td><td class="num">30px</td><td>Fraunces 700</td></tr><tr><td>Service titles</td><td class="num">22px</td><td class="num">20px</td><td>Fraunces 700</td></tr><tr><td>Product name</td><td class="num">19px</td><td class="num">18px</td><td>Fraunces 600</td></tr><tr><td>Price</td><td class="num">20px</td><td class="num">20px</td><td>Fraunces 700, indigo</td></tr><tr><td>Body text</td><td class="num">16px</td><td class="num">16px</td><td>Outfit 400, line height 1.6</td></tr><tr><td>Buttons</td><td class="num">16px</td><td class="num">15px</td><td>Outfit 600</td></tr></tbody></table></div>
-  <h4>Layout and buttons</h4><div class="tbl"><table><tbody><tr><td>Content width</td><td>1200px max</td></tr><tr><td>Section padding</td><td>72px top and bottom (52px mobile)</td></tr><tr><td>Alignment</td><td>Left-aligned text inside colored blocks</td></tr><tr><td>Product grid</td><td>4 columns desktop, 2 mobile, 22px gap</td></tr><tr><td>Product image</td><td>3:4 portrait; hero photo has 16px rounded corners and a 6px marigold border</td></tr><tr><td>Buttons</td><td>8px rounded corners, 15px by 26px padding</td></tr><tr><td>Cards</td><td>White, 14px rounded corners, 1px border #E4DACA</td></tr></tbody></table></div>
-  <h4>GoHighLevel build, section by section</h4><div class="tbl"><table><thead><tr><th>Section</th><th>Rows and columns</th><th>Elements</th></tr></thead><tbody><tr><td>Header and hero</td><td>Indigo section: 1 row, 2 columns for the menu, then 1 row, 2 columns</td><td>Logo and Nav Menu; then tag, Headline, Paragraph, 2 Buttons left and a bordered Image right</td></tr><tr><td>Marigold strip</td><td>1 row, 1 column, marigold background</td><td>One centered line of Text</td></tr><tr><td>Services</td><td>1 row, 3 columns</td><td>Three boxes: white, indigo, white, each with Headline and Paragraph</td></tr><tr><td>Shop</td><td>3 rows, 4 columns (12 products)</td><td>Each column: Image, tag, Headline, size and price, full-width Button</td></tr><tr><td>Call to action</td><td>1 row, 2 columns in a rust box with rounded corners</td><td>Headline and Paragraph left, marigold Button right</td></tr><tr><td>Footer</td><td>1 row, 3 columns, indigo background</td><td>Name, WhatsApp number, shop links</td></tr></tbody></table></div>
-</section>
- <p class="foot">All prices are in US dollars (USD). Prices marked with * are samples for layout only. Confirmed prices: Brown Striped Three-Quarter $130.00, White Three-Quarter $140.00, Blue Long Sleeve $140.00, White Striped Short Sleeve $130.00, Off-White Short Sleeve $130.00, White Longline Set $140.00.</p>
-</div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Amusa Signature Suite Designs</title>
+    <meta name="description" content="Three website design samples for Amusa Signature Suite.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&family=Bodoni+Moda:wght@500&family=Fraunces:opsz,wght@9..144,700&family=Pinyon+Script&display=swap">
+    <style>
+        :root {
+            --bg: #F7F2EC;
+            --surface: #FFFFFF;
+            --fg: #241B21;
+            --mute: #71656C;
+            --line: #E6DCD2;
+            --accent: #8A6A3E;
+            --display: "Cormorant Garamond", Georgia, serif;
+            --script: "Pinyon Script", "Snell Roundhand", cursive;
+            --body: "Jost", system-ui, sans-serif;
+            color-scheme: light;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box
+        }
+
+        html {
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px)
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--fg);
+            font: 400 16px/1.65 var(--body)
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        a {
+            color: inherit
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px
+        }
+
+        .wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding-inline: 20px;
+            padding-block: 56px 72px
+        }
+
+        header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 48px
+        }
+
+        .brand {
+            font: 400 clamp(34px, 5vw, 46px)/1 var(--script);
+            color: var(--accent);
+            margin: 0
+        }
+
+        .brand-sub {
+            font-size: 12px;
+            letter-spacing: .32em;
+            text-transform: uppercase;
+            color: var(--mute);
+            margin: 10px 0 28px
+        }
+
+        h1 {
+            font: 500 clamp(36px, 5.4vw, 58px)/1.04 var(--display);
+            margin: 0 0 16px;
+            text-wrap: balance
+        }
+
+        h1 em {
+            font-style: italic;
+            color: var(--accent)
+        }
+
+        .lead {
+            color: var(--mute);
+            margin: 0 auto;
+            max-width: 52ch
+        }
+
+        .rule {
+            width: 56px;
+            height: 1px;
+            background: var(--accent);
+            margin: 28px auto 0
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px
+        }
+
+        .card {
+            background: var(--cbg);
+            color: var(--cfg);
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            min-width: 0;
+            border: 1px solid var(--line);
+            transition: transform .35s ease, box-shadow .35s ease
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 22px 44px -24px rgba(36, 27, 33, .45)
+        }
+
+        .photo {
+            position: relative;
+            overflow: hidden
+        }
+
+        .photo img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            object-position: 50% 58%;
+            transition: transform .8s ease
+        }
+
+        .card:hover .photo img {
+            transform: scale(1.04)
+        }
+
+        .tag {
+            position: absolute;
+            left: 16px;
+            top: 16px;
+            background: var(--cbg);
+            color: var(--cac);
+            font-size: 11px;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            padding: 6px 10px
+        }
+
+        .body {
+            padding: 24px 24px 26px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            flex: 1
+        }
+
+        .name {
+            font-size: 40px;
+            line-height: 1;
+            margin: 0
+        }
+
+        .desc {
+            margin: 0;
+            opacity: .82;
+            flex: 1
+        }
+
+        .palette {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        .dot {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            box-shadow: inset 0 0 0 1px rgba(127, 127, 127, .35)
+        }
+
+        .plabel {
+            font-size: 11px;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            opacity: .65;
+            margin: 0
+        }
+
+        .view {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid color-mix(in srgb, var(--cfg) 18%, transparent);
+            padding-top: 16px;
+            font-size: 13px;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--cac);
+            font-weight: 500
+        }
+
+        .view span {
+            transition: transform .3s ease
+        }
+
+        .card:hover .view span {
+            transform: translateX(5px)
+        }
+
+        .note {
+            margin: 56px auto 0;
+            max-width: 720px;
+            text-align: center
+        }
+
+        .note h2 {
+            font: 500 clamp(26px, 3.4vw, 36px)/1.15 var(--display);
+            margin: 0 0 10px
+        }
+
+        .note p {
+            color: var(--mute);
+            margin: 0 0 8px
+        }
+
+        .small {
+            font-size: 14px
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 56px;
+            padding-top: 24px;
+            border-top: 1px solid var(--line);
+            font-size: 13px;
+            color: var(--mute)
+        }
+
+        @media (max-width:920px) {
+            .cards {
+                grid-template-columns: 1fr;
+                max-width: 520px;
+                margin: 0 auto
+            }
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            * {
+                transition: none !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <p class="brand">Amusa Signature Suite</p>
+            <p class="brand-sub">Website design samples</p>
+            <h1>Three styles, <em>one signature.</em></h1>
+            <p class="lead">Each sample shows your collection, your tailoring and fabric services, and an easy way for
+                customers to order. Tap a design to view the full page.</p>
+            <div class="rule"></div>
+        </header>
+
+        <main class="cards">
+            <a class="card" href="v1-heritage.html" style="--cbg:#1E1320;--cfg:#F1E9DE;--cac:#C49A5A">
+                <div class="photo"><img src="img/p11.jpg" alt="Wine set with matching cap"><span
+                        class="tag">Luxurious</span></div>
+                <div class="body">
+                    <h2 class="name" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500">Heritage
+                    </h2>
+                    <p class="desc">Deep aubergine and gold. Elegant and ceremonial, made for weddings, celebrations and
+                        premium occasion wear.</p>
+                    <p class="plabel">Colors</p>
+                    <div class="palette"><span class="dot" style="background:#1E1320" title="Aubergine"></span><span
+                            class="dot" style="background:#2A1A2C" title="Plum"></span><span class="dot"
+                            style="background:#C49A5A" title="Gold"></span><span class="dot" style="background:#F1E9DE"
+                            title="Bone"></span></div>
+                    <p class="view">View Heritage <span aria-hidden="true">&rarr;</span></p>
+                </div>
+            </a>
+
+            <a class="card" href="v2-atelier.html" style="--cbg:#FFFFFF;--cfg:#141414;--cac:#2E5B86">
+                <div class="photo"><img src="img/p06.jpg" alt="Blue long sleeve senator"><span class="tag">Modern</span>
+                </div>
+                <div class="body">
+                    <h2 class="name" style="font-family:'Bodoni Moda',Didot,Georgia,serif;font-weight:500">Atelier</h2>
+                    <p class="desc">Bright white with a touch of senator blue. Clean and contemporary, with large photos
+                        like a fashion lookbook.</p>
+                    <p class="plabel">Colors</p>
+                    <div class="palette"><span class="dot" style="background:#FFFFFF" title="White"></span><span
+                            class="dot" style="background:#F1EFEB" title="Stone"></span><span class="dot"
+                            style="background:#141414" title="Ink"></span><span class="dot" style="background:#2E5B86"
+                            title="Senator blue"></span></div>
+                    <p class="view">View Atelier <span aria-hidden="true">&rarr;</span></p>
+                </div>
+            </a>
+
+            <a class="card" href="v3-adire.html" style="--cbg:#1D2545;--cfg:#F3EBDD;--cac:#E9A23B">
+                <div class="photo"><img src="img/p15.jpg" alt="Navy embroidered senator"><span class="tag">Bold</span>
+                </div>
+                <div class="body">
+                    <h2 class="name" style="font-family:'Fraunces',Georgia,serif;font-weight:700">Adire</h2>
+                    <p class="desc">Indigo, marigold and rust, inspired by adire print. Lively and colorful, proudly
+                        African and full of energy.</p>
+                    <p class="plabel">Colors</p>
+                    <div class="palette"><span class="dot" style="background:#1D2545" title="Indigo"></span><span
+                            class="dot" style="background:#E9A23B" title="Marigold"></span><span class="dot"
+                            style="background:#B9532C" title="Rust"></span><span class="dot" style="background:#F3EBDD"
+                            title="Sand"></span></div>
+                    <p class="view">View Adire <span aria-hidden="true">&rarr;</span></p>
+                </div>
+            </a>
+        </main>
+
+        <section class="note">
+            <h2>Which style feels like Amusa?</h2>
+            <p>Let us know your favorite. We can also combine them, for example one layout with another's colors.</p>
+            <p class="small">Product names, prices and sizes shown are placeholders and will be updated with your
+                details.</p>
+        </section>
+
+        <footer>Amusa Signature Suite · Men's native wear, tailoring and fabrics</footer>
+    </div>
+</body>
+
+</html>
